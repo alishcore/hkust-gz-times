@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HKUST GZ Times — Issue 01</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F2EDE4;
+  --ink: #151210;
+  --ink2: #2e2b27;
+  --muted: #7a746c;
+  --rule: #c8c0b4;
+  --red: #B8341B;
+  --gold: #C49A3C;
+  --blue: #1B3F6E;
+  --paper-dark: #E8E0D4;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { font-size:16px; scroll-behavior:smooth; }
+body { background: var(--paper); color: var(--ink); font-family: 'Libre Baskerville', Georgia, serif; -webkit-font-smoothing: antialiased; }
+
+/* ── MASTHEAD ── */
+.masthead {
+  border-bottom: 4px double var(--ink);
+  padding: 1.25rem 0 0;
+  background: var(--paper);
+  position: sticky; top: 0; z-index: 100;
+}
+.mast-top {
+  max-width: 1200px; margin: 0 auto; padding: 0 2.5rem;
+  display: flex; justify-content: space-between; align-items: flex-end;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+.mast-meta { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.04em; }
+.mast-logo-wrap { text-align: center; }
+.mast-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 900; letter-spacing: -0.01em;
+  color: var(--ink); line-height: 1;
+  text-decoration: none; display: block;
+}
+.mast-logo span { color: var(--red); }
+.mast-tagline { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-top: 0.25rem; }
+.mast-nav {
+  max-width: 1200px; margin: 0 auto; padding: 0 2.5rem;
+  display: flex; gap: 0; border-top: 1px solid var(--rule);
+}
+.mast-nav a {
+  font-family: 'DM Mono', monospace; font-size: 0.68rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink2); text-decoration: none;
+  padding: 0.5rem 1.25rem 0.5rem 0; margin-right: 1.25rem;
+  border-right: 1px solid var(--rule);
+  transition: color 0.15s;
+}
+.mast-nav a:last-child { border-right: none; }
+.mast-nav a:hover { color: var(--red); }
+
+/* ── HERO ── */
+.hero {
+  max-width: 1200px; margin: 0 auto;
+  padding: 2.5rem 2.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr 3px 1fr 3px 1fr;
+  gap: 0;
+  border-bottom: 2px solid var(--ink);
+}
+.col-rule { background: var(--rule); margin: 0 1.75rem; }
+.hero-main { padding-right: 1.75rem; }
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--red); margin-bottom: 0.85rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.hero-eyebrow::before { content:''; display:block; width:24px; height:1px; background:var(--red); }
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 900; line-height: 1.05;
+  letter-spacing: -0.02em; color: var(--ink);
+  margin-bottom: 1rem;
+}
+.hero-headline em { font-style: italic; font-weight: 400; }
+.hero-standfirst {
+  font-size: 1rem; line-height: 1.7;
+  color: var(--ink2); margin-bottom: 1.25rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+}
+.hero-authors { margin-top: auto; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+.hero-author {
+  font-family: 'DM Mono', monospace; font-size: 0.67rem;
+  color: var(--muted); padding: 0.3rem 0;
+  border-bottom: 1px solid var(--paper-dark);
+  display: flex; gap: 0.75rem;
+}
+.hero-author strong { color: var(--ink); }
+.hero-author-num { color: var(--red); }
+
+.hero-mid { padding: 0 1.75rem; display: flex; flex-direction: column; }
+.hero-big-stat {
+  flex: 1; display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center; padding: 2rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 7rem; font-weight: 900; line-height: 1;
+  color: var(--ink); display: block;
+}
+.stat-label { font-size: 0.85rem; color: var(--muted); line-height: 1.5; max-width: 180px; margin-top: 0.5rem; }
+.hero-mid-fact {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-mid-fact:last-child { border-bottom: none; }
+.hmf-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--red); }
+.hmf-text { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+.hero-right { padding-left: 1.75rem; display: flex; flex-direction: column; gap: 1.5rem; }
+.toc-label { font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+.toc-item {
+  padding: 0.85rem 0; border-bottom: 1px solid var(--rule);
+  cursor: pointer; transition: all 0.15s;
+}
+.toc-item:hover .toc-title { color: var(--red); }
+.toc-num { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--red); margin-bottom: 0.3rem; }
+.toc-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; line-height: 1.3; color: var(--ink); transition: color 0.15s; }
+.toc-author { font-family: 'DM Mono', monospace; font-size: 0.63rem; color: var(--muted); margin-top: 0.25rem; }
+
+/* ── PAGE ── */
+.page { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem; }
+
+/* ── SECTION RULE ── */
+.section-head {
+  padding: 2.5rem 0 1.5rem;
+  border-bottom: 2px solid var(--ink);
+  display: flex; align-items: baseline; gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+.sh-num { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--red); letter-spacing: 0.1em; }
+.sh-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--ink); flex:1; }
+.sh-author { font-family: 'DM Mono', monospace; font-size: 0.63rem; color: var(--muted); }
+
+/* ── ARTICLE LAYOUT ── */
+.article-grid {
+  display: grid;
+  grid-template-columns: 1fr 3px 260px;
+  gap: 0;
+  padding-bottom: 3rem;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 0;
+}
+.article-body-col { padding-right: 2rem; }
+.article-side-rule { background: var(--rule); margin: 0 1.75rem; }
+.article-sidebar { }
+
+.art-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.5rem);
+  font-weight: 900; line-height: 1.1;
+  letter-spacing: -0.015em; color: var(--ink);
+  margin-bottom: 0.65rem;
+}
+.art-dek {
+  font-size: 1rem; font-style: italic;
+  color: var(--ink2); line-height: 1.65;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 0.75rem 0; margin-bottom: 1.25rem;
+}
+.art-body { font-size: 0.93rem; line-height: 1.85; color: var(--ink); }
+.art-body p { margin-bottom: 1.1rem; }
+.art-body p:first-of-type::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 4.2rem; font-weight: 900;
+  float: left; line-height: 0.72;
+  margin: 0.05em 0.07em 0 0;
+  color: var(--red);
+}
+
+.pullquote {
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding: 1.25rem 0; margin: 2rem 0;
+}
+.pq-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem; font-style: italic; font-weight: 400;
+  line-height: 1.45; color: var(--ink); margin-bottom: 0.5rem;
+}
+.pq-cite { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.04em; }
+
+/* SIDEBAR */
+.sb-block { padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+.sb-block:first-child { border-top: none; padding-top: 0; }
+.sb-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
+.sb-body { font-size: 0.82rem; line-height: 1.65; color: var(--ink2); }
+.sb-big { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--red); line-height: 1; display: block; margin-bottom: 0.25rem; }
+.sb-link { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--blue); text-decoration: none; display: block; padding: 0.25rem 0; border-bottom: 1px solid var(--paper-dark); transition: color 0.15s; }
+.sb-link:hover { color: var(--red); }
+.sb-link:last-child { border-bottom: none; }
+
+/* DIAGRAM */
+.diagram-section {
+  border-bottom: 2px solid var(--ink);
+  padding: 2rem 0;
+  background: var(--paper);
+}
+.diag-label { font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+.diag-caption { font-size: 0.78rem; font-style: italic; color: var(--muted); margin-top: 0.75rem; text-align: center; }
+
+/* QUIZ */
+.quiz-section {
+  background: var(--ink);
+  padding: 3.5rem 0;
+  border-bottom: 4px double var(--paper);
+}
+.quiz-inner { max-width: 680px; }
+.q-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.q-headline { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 900; color: var(--paper); line-height: 1.2; margin-bottom: 2rem; }
+.q-prog { display: flex; gap: 3px; margin-bottom: 1.75rem; }
+.q-pd { height: 2px; flex: 1; background: rgba(242,237,228,0.15); transition: background 0.3s; }
+.q-pd.done { background: var(--gold); }
+.q-pd.active { background: rgba(242,237,228,0.6); }
+.q-question { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--paper); line-height: 1.5; margin-bottom: 1.5rem; min-height: 52px; font-style: italic; }
+.q-opts { display: flex; flex-direction: column; gap: 0.45rem; }
+.q-opt {
+  background: transparent;
+  border: 1px solid rgba(242,237,228,0.18);
+  padding: 0.75rem 1rem;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.85rem; color: rgba(242,237,228,0.68);
+  cursor: pointer; text-align: left;
+  transition: all 0.15s; display: flex; gap: 0.85rem; align-items: flex-start;
+}
+.q-opt:hover { border-color: var(--gold); color: var(--paper); background: rgba(196,154,60,0.08); }
+.q-opt.correct { border-color: #5a9e6f; background: rgba(90,158,111,0.1); color: var(--paper); }
+.q-opt.wrong { border-color: rgba(184,52,27,0.5); color: rgba(242,237,228,0.35); }
+.q-ltr { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--gold); padding-top: 0.1rem; flex-shrink: 0; }
+.q-fb { border-left: 2px solid var(--gold); padding: 0.7rem 1rem; background: rgba(242,237,228,0.04); font-size: 0.83rem; color: rgba(242,237,228,0.65); line-height: 1.65; display: none; margin: 1rem 0; font-style: italic; }
+.q-next { background: var(--red); color: var(--paper); border: none; padding: 0.65rem 1.75rem; font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; display: none; margin-top: 0.75rem; transition: background 0.15s; }
+.q-next:hover { background: #8f2714; }
+.q-score { display: none; text-align: center; padding: 1.5rem 0; }
+.qs-n { font-family: 'Playfair Display', serif; font-size: 6rem; font-weight: 900; color: var(--gold); line-height: 1; display: block; }
+.qs-l { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: rgba(242,237,228,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin: 0.5rem 0 1.5rem; }
+.qs-m { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-style: italic; color: rgba(242,237,228,0.8); max-width: 440px; margin: 0 auto 1.75rem; line-height: 1.5; }
+.qs-r { background: transparent; color: rgba(242,237,228,0.4); border: 1px solid rgba(242,237,228,0.2); padding: 0.5rem 1.25rem; font-family: 'DM Mono', monospace; font-size: 0.68rem; cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* LINKS */
+.links-section { padding: 2.5rem 0; border-bottom: 2px solid var(--ink); }
+.links-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+.link-card { padding: 1.25rem 1.5rem 1.25rem 0; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); text-decoration: none; color: inherit; display: block; transition: background 0.15s; }
+.link-card:nth-child(even) { padding-left: 1.5rem; border-right: none; }
+.link-card:nth-last-child(-n+2) { border-bottom: none; }
+.link-card:hover .lc-title { color: var(--red); }
+.lc-type { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+.lc-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 0.3rem; transition: color 0.15s; line-height: 1.3; }
+.lc-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+/* REFS */
+.refs-section { padding: 2.5rem 0; }
+.refs-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 900; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--ink); }
+.refs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; }
+.ref { font-size: 0.8rem; line-height: 1.75; color: var(--ink2); padding: 0.65rem 0; border-bottom: 1px solid var(--paper-dark); }
+.ref a { color: var(--blue); }
+.ref-credits { grid-column: 1/-1; margin-top: 1.5rem; padding: 1.25rem; background: var(--paper-dark); font-size: 0.78rem; color: var(--muted); line-height: 1.7; }
+
+/* FOOTER */
+footer {
+  border-top: 4px double var(--ink);
+  padding: 1.5rem 2.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 0.5rem;
+  background: var(--paper);
+}
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 900; color: var(--ink); }
+.footer-logo span { color: var(--red); }
+footer p { font-family: 'DM Mono', monospace; font-size: 0.63rem; color: var(--muted); }
+
+/* REVEAL */
+.rv { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.rv.in { opacity: 1; transform: none; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .col-rule { display: none; }
+  .hero-mid, .hero-right { display: none; }
+  .article-grid { grid-template-columns: 1fr; }
+  .article-side-rule { display: none; }
+  .links-grid { grid-template-columns: 1fr; }
+  .refs-grid { grid-template-columns: 1fr; }
+  .mast-nav a { font-size: 0.6rem; padding-right: 0.75rem; margin-right: 0.75rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="mast-top">
+    <div class="mast-meta">
+      HKUST(GZ) · Issue 01 · 2025<br>Digital Identity & Society
+    </div>
+    <div class="mast-logo-wrap">
+      <a class="mast-logo" href="#">HKUST GZ <span>Times</span></a>
+      <div class="mast-tagline">The Student Magazine of HKUST Guangzhou</div>
+    </div>
+    <div class="mast-meta" style="text-align:right;">
+      Audience: HKUST(GZ) Students<br>Three Articles · One Quiz
+    </div>
+  </div>
+  <div class="mast-nav">
+    <a href="#a1">Identity</a>
+    <a href="#a2">Algorithms</a>
+    <a href="#a3">Surveillance</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#links">Resources</a>
+    <a href="#refs">References</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <!-- LEFT -->
+  <div class="hero-main rv">
+    <div class="hero-eyebrow">Lead Story — Digital Identity</div>
+    <h1 class="hero-headline">Who Controls<br>Your <em>Digital Self?</em></h1>
+    <p class="hero-standfirst">Three HKUST(GZ) students investigate how social media, surveillance systems, and recommendation algorithms are reshaping identity, privacy, and thought — and what students at Guangzhou's newest world-class university should do about it.</p>
+    <div class="hero-authors">
+      <div class="hero-author"><span class="hero-author-num">I</span><span><strong>Alisher Zhangeldiyev</strong> — The Performance Trap</span></div>
+      <div class="hero-author"><span class="hero-author-num">II</span><span><strong>Yernur Nurzhan</strong> — The Illusion of Choice</span></div>
+      <div class="hero-author"><span class="hero-author-num">III</span><span><strong>Olzhas Tilektes</strong> — The Watching Machine</span></div>
+    </div>
+  </div>
+  <div class="col-rule"></div>
+  <!-- MID -->
+  <div class="hero-mid rv">
+    <div class="hero-big-stat">
+      <span class="stat-num">61%</span>
+      <span class="stat-label">of young adults worldwide report serious loneliness</span>
+    </div>
+    <div class="hero-mid-fact">
+      <div class="hmf-num">4.9B</div>
+      <div class="hmf-text">social media users — the most connected era in history, yet loneliness is at a record high</div>
+    </div>
+    <div class="hero-mid-fact">
+      <div class="hmf-num">38%</div>
+      <div class="hmf-text">feel worse about themselves after scrolling</div>
+    </div>
+    <div class="hero-mid-fact">
+      <div class="hmf-num">70%</div>
+      <div class="hmf-text">of teens feel pressure to post only the "perfect" version of their life</div>
+    </div>
+  </div>
+  <div class="col-rule"></div>
+  <!-- RIGHT / TOC -->
+  <div class="hero-right rv">
+    <div>
+      <div class="toc-label">In This Issue</div>
+      <div class="toc-item" onclick="document.getElementById('a1').scrollIntoView({behavior:'smooth'})">
+        <div class="toc-num">Article I — Identity</div>
+        <div class="toc-title">The Performance Trap: How Social Media Turns Identity Into a Brand</div>
+        <div class="toc-author">Alisher Zhangeldiyev</div>
+      </div>
+      <div class="toc-item" onclick="document.getElementById('a2').scrollIntoView({behavior:'smooth'})">
+        <div class="toc-num">Article II — Algorithms</div>
+        <div class="toc-title">The Illusion of Choice: How Algorithms Quietly Replace Our Thinking</div>
+        <div class="toc-author">Yernur Nurzhan</div>
+      </div>
+      <div class="toc-item" onclick="document.getElementById('a3').scrollIntoView({behavior:'smooth'})">
+        <div class="toc-num">Article III — Surveillance</div>
+        <div class="toc-title">The Watching Machine: How Surveillance Capitalism Redefines Privacy</div>
+        <div class="toc-author">Olzhas Tilektes</div>
+      </div>
+      <div class="toc-item" onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})">
+        <div class="toc-num">Interactive</div>
+        <div class="toc-title">Test Your Knowledge — Six-Question Quiz</div>
+        <div class="toc-author">Across all three articles</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ARTICLE 1 ── -->
+<div id="a1" class="page" style="padding-top:0;">
+  <div class="section-head rv">
+    <span class="sh-num">Article I — Identity & Self-Presentation</span>
+    <span class="sh-title">The Performance Trap: How Social Media Turns Identity Into a Brand</span>
+    <span class="sh-author">Alisher Zhangeldiyev</span>
+  </div>
+  <div class="article-grid rv">
+    <div class="article-body-col">
+      <h2 class="art-title">The Performance Trap: How Social Media Turns Identity Into a Brand</h2>
+      <p class="art-dek">The pressure to perform a perfect self online is quietly eroding the authenticity that makes us human — and the research reveals exactly why it keeps getting worse.</p>
+      <div class="art-body">
+        <p>Scroll through any social media feed and you will notice something peculiar: everyone appears happy, successful, and aesthetically coordinated. The food is always plated beautifully. The holidays are always golden-lit. Yet research consistently shows that people feel <em>worse</em>, not better, after these scrolling sessions — more anxious, more inadequate, and strangely more alone. This is not an accident. It is the logical outcome of a system that rewards performance over presence, and understanding that logic is the first step toward resisting it.</p>
+        <p>The evolution of digital life has fundamentally altered how individuals construct and perceive their identities. According to Pang (2021), mobile social media users are increasingly driven by hedonic and utilitarian values — seeking pleasure and external reward — which shapes their online behaviour around approval rather than authentic self-expression. In this framework, the digital profile becomes a curated product engineered for external evaluation rather than a reflection of inner reality. We no longer simply live our lives and share them; we construct a version of ourselves optimised for likes, comments, and shares. The self becomes a brand, and brands must be managed constantly.</p>
+        <div class="pullquote">
+          <p class="pq-text">"The digital profile has become a curated product designed for external evaluation rather than a reflection of reality."</p>
+          <span class="pq-cite">— Pang, 2021, adapted</span>
+        </div>
+        <p>This shift from "being" to "representing" is subtle but profound. When we frame our lives for an audience — even a hypothetical one — we begin to lose track of where the performance ends and the person begins. Psychologists call this <strong>self-concept confusion</strong>: the fracture between the public identity we maintain online and the private identity we actually inhabit. For HKUST(GZ) students, this tension is especially acute. Higher education is already a period of intense identity formation — students are testing values, forming professional aspirations, and navigating new social environments. Into this already uncertain landscape, constant digital self-presentation adds the additional burden of projecting a coherent and aspirational image to a permanent, undifferentiated audience.</p>
+        <p>There is a clear tension, too, between the quantity and quality of digital social relations. Masur (2019) argues that the constant availability of online communication reshapes how individuals perceive privacy and self-disclosure across situational contexts. Online, the contextual cues that govern face-to-face sharing collapse: what we say reaches friends, acquaintances, and strangers simultaneously, making genuine vulnerability feel risky. The result is that people share less of what actually matters — the uncertain, complex, genuinely personal — and more of what performs well. Connection multiplies in quantity while shrinking in depth.</p>
+        <p>The psychological consequences are measurable. Twenge et al. (2018) identified a direct link between increased screen time and declining psychological well-being among American adolescents — lower self-esteem, reduced life satisfaction, and diminished happiness. The correlation was strongest on image-sharing platforms where social comparison is most direct. As you craft the "perfect" post, you implicitly measure yourself against others doing exactly the same, caught in a loop of mutual performance in which nobody wins.</p>
+        <p>Some scholars argue that the internet also creates genuine communities and provides social support that would otherwise be unavailable — and they are right. Marginalised groups, geographically isolated individuals, and those exploring identities their immediate environments do not accept can find real belonging online. But the problem lies in platform architectures that systematically reward performance over authenticity and make social validation the primary metric of self-worth.</p>
+        <p>The digital impact on social life is deeply paradoxical. Technology offers unprecedented opportunities for community building, yet it risks transforming human identity into a marketable object of algorithmic approval. To maintain healthy social relations and a stable sense of self, HKUST(GZ) students must navigate the line between using digital tools for genuine connection and losing their authentic selves to the demands of virtual performance. That navigation begins not with logging off, but with asking a harder question each time you reach for your phone: am I sharing who I am, or constructing who I want to appear to be?</p>
+      </div>
+    </div>
+    <div class="article-side-rule"></div>
+    <div class="article-sidebar">
+      <div class="sb-block">
+        <div class="sb-label">Key Finding</div>
+        <span class="sb-big">38%</span>
+        <p class="sb-body">of young people feel worse about themselves after scrolling — rising above 50% on image-based platforms.</p>
+      </div>
+      <div class="sb-block">
+        <div class="sb-label">Concept</div>
+        <p class="sb-body"><strong>Performative identity</strong> — when an online persona becomes a product managed for approval rather than genuine expression. Rooted in Goffman's "impression management" (1959), now amplified by algorithmic feedback loops.</p>
+      </div>
+      <div class="sb-block">
+        <div class="sb-label">Discussion Question</div>
+        <p class="sb-body" style="font-style:italic;">"Does maintaining a curated online identity make you feel more confident — or does it increase anxiety about your real-life self?"</p>
+      </div>
+      <div class="sb-block">
+        <div class="sb-label">Sources</div>
+        <a class="sb-link" href="https://doi.org/10.1016/j.tele.2020.101561" target="_blank">↗ Pang (2021)</a>
+        <a class="sb-link" href="https://doi.org/10.1037/emo0000403" target="_blank">↗ Twenge et al. (2018)</a>
+        <a class="sb-link" href="https://doi.org/10.1007/978-3-319-78884-5" target="_blank">↗ Masur (2019)</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DIAGRAM -->
+<div class="diagram-section page rv">
+  <div class="diag-label">Figure 1 — The Identity-Platform Feedback Loop</div>
+  <svg viewBox="0 0 900 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:860px;display:block;margin:0 auto">
+    <defs><marker id="ar" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5 Z" fill="#7a746c"/></marker></defs>
+    <rect x="4" y="50" width="130" height="50" fill="#F2EDE4" stroke="#c8c0b4"/>
+    <text x="69" y="72" text-anchor="middle" font-family="Playfair Display,serif" font-size="12" fill="#151210" font-weight="700">Authentic</text>
+    <text x="69" y="88" text-anchor="middle" font-family="Playfair Display,serif" font-size="12" fill="#151210" font-weight="700">Self</text>
+    <rect x="174" y="50" width="130" height="50" fill="#F2EDE4" stroke="#c8c0b4"/>
+    <text x="239" y="72" text-anchor="middle" font-family="Playfair Display,serif" font-size="12" fill="#151210" font-weight="700">Curated</text>
+    <text x="239" y="88" text-anchor="middle" font-family="Playfair Display,serif" font-size="12" fill="#151210" font-weight="700">Post</text>
+    <rect x="344" y="50" width="150" height="50" fill="#F2EDE4" stroke="#c8c0b4"/>
+    <text x="419" y="72" text-anchor="middle" font-family="Playfair Display,serif" font-size="12" fill="#151210" font-weight="700">Algorithmic</text>
+    <text x="419" y="88" text-anchor="middle" font-family="Playfair Display,serif" font-size="12" fill="#151210" font-weight="700">Feedback</text>
+    <rect x="544" y="50" width="130" height="50" fill="#F2EDE4" stroke="#c8c0b4"/>
+    <text x="609" y="72" text-anchor="middle" font-family="Playfair Display,serif" font-size="12" fill="#151210" font-weight="700">Social</text>
+    <text x="609" y="88" text-anchor="middle" font-family="Playfair Display,serif" font-size="12" fill="#151210" font-weight="700">Validation</text>
+    <rect x="724" y="50" width="168" height="50" fill="#151210" stroke="#151210"/>
+    <text x="808" y="72" text-anchor="middle" font-family="Playfair Display,serif" font-size="12" fill="#F2EDE4" font-weight="700">Performative</text>
+    <text x="808" y="88" text-anchor="middle" font-family="Playfair Display,serif" font-size="12" fill="#B8341B" font-weight="700">Identity</text>
+    <line x1="134" y1="75" x2="172" y2="75" stroke="#7a746c" stroke-width="1" marker-end="url(#ar)"/>
+    <line x1="304" y1="75" x2="342" y2="75" stroke="#7a746c" stroke-width="1" marker-end="url(#ar)"/>
+    <line x1="494" y1="75" x2="542" y2="75" stroke="#7a746c" stroke-width="1" marker-end="url(#ar)"/>
+    <line x1="674" y1="75" x2="722" y2="75" stroke="#7a746c" stroke-width="1" marker-end="url(#ar)"/>
+    <path d="M808,100 Q808,140 419,140 Q69,140 69,100" fill="none" stroke="#B8341B" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#ar)" opacity="0.6"/>
+    <text x="419" y="154" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" fill="#B8341B" opacity="0.75">loop reinforces performance over authenticity — Pang, 2021</text>
+  </svg>
+  <p class="diag-caption">Figure 1. The self-reinforcing loop between authentic identity and performative online persona, mediated by algorithmic reward structures.</p>
+</div>
+
+<!-- ── ARTICLE 3 ── -->
+<div id="a2" class="page">
+  <div class="section-head rv">
+    <span class="sh-num">Article II — Algorithms & Critical Thinking</span>
+    <span class="sh-title">The Illusion of Choice: How Algorithms Quietly Replace Our Thinking</span>
+    <span class="sh-author">Yernur Nurzhan</span>
+  </div>
+  <div class="article-grid rv">
+    <div class="article-body-col">
+      <h2 class="art-title">The Illusion of Choice: How Algorithms Quietly Replace Our Thinking</h2>
+      <p class="art-dek">Social media platforms present themselves as neutral tools for discovery. Research tells a different story — one in which personalisation narrows the mind rather than expanding it.</p>
+      <div class="art-body">
+        <p>To what extent do algorithms reshape our thinking? The question sounds philosophical, but its implications are immediate and practical. Every time a streaming service recommends a show, a social feed surfaces a post, or a search engine orders its results, a decision is being made on your behalf — quietly, invisibly, and in the interests of engagement rather than your intellectual growth. Algorithmic systems create the illusion of choice by narrowing access to content, reinforcing existing beliefs, and encouraging passive consumption, significantly weakening critical thinking over time.</p>
+        <p>Research on the "filter bubble" shows that personalised recommendation systems are gradually limiting the variety of information users encounter. Instead of expanding knowledge, algorithms prioritise familiarity — the content most likely to keep you scrolling — resulting in echo chambers that reinforce pre-existing beliefs (Nguyen et al., 2014). Rather than encountering perspectives that challenge assumptions, users are fed a selective version of reality that feels comprehensive but is actually curated. The algorithm does not show you the world. It shows you a reflection of what it has already learned you prefer.</p>
+        <div class="pullquote">
+          <p class="pq-text">"Algorithms trick us into thinking we see the whole picture, but in reality we are seeing only a selective version of reality."</p>
+          <span class="pq-cite">— Yernur Nurzhan, adapted from synthesis paper</span>
+        </div>
+        <p>A study published in the <em>Proceedings of the National Academy of Sciences</em> demonstrates that online environments reinforce confirmation bias: users are constantly confronted with content consistent with their existing beliefs (Cinelli et al., 2021). For HKUST(GZ) students whose critical thinking skills are still developing, repeated exposure to algorithmically curated agreement can quietly erode the habit of seeking out contradiction and complexity that academic inquiry demands.</p>
+        <p>Algorithmic environments also contribute to cognitive overload when users rely on automated systems to filter and prioritise information. Frictionless design reduces effort — which feels like a benefit — but it also weakens the habits necessary for critical thinking (Sundar, 2020). When the algorithm decides what is worth reading, the cognitive muscles required to make those judgments yourself begin to atrophy. Over time, this can contribute to what researchers call <strong>acquired cognitive passivity</strong>: people gradually lose both the habit and the ability to engage with complex, challenging, or unfamiliar ideas.</p>
+        <p>It is important to be precise about what is not being claimed here. Algorithms do not eliminate free will, and personalisation does offer genuine convenience. The problem is subtler: algorithms make passive consumption the path of least resistance, and passive consumption is the enemy of the kind of active, critical, self-directed engagement that higher education is supposed to cultivate.</p>
+        <p>The practical implication for students is straightforward: the information environment you inhabit is not neutral. It has been engineered, and it is being engineered on you. Deliberately seeking out sources outside your recommendation feed, practising friction in information consumption, and asking not just "is this engaging?" but "is this challenging me?" is not a digital detox strategy. It is an intellectual survival skill for the twenty-first century — and one every HKUST(GZ) student can begin practising today.</p>
+        <div style="border-top:2px solid var(--ink);padding:1.5rem 0;margin-top:2rem;">
+          <div style="font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Editorial — Shared Purpose</div>
+          <p style="font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:var(--ink);line-height:1.55;">Taken together, these three articles argue that HKUST(GZ) students face a common challenge: digital systems designed not to serve human flourishing, but to extract value from human behaviour. Identity is mined for social validation. Behaviour is mined for predictive data. Attention is mined for engagement metrics. The antidote in each case is the same — awareness, intention, and the refusal to mistake convenience for freedom.</p>
+          <div style="font-family:'DM Mono',monospace;font-size:0.62rem;color:var(--muted);margin-top:0.65rem;">— HKUST GZ Times, Issue 01, 2025</div>
+        </div>
+      </div>
+    </div>
+    <div class="article-side-rule"></div>
+    <div class="article-sidebar">
+      <div class="sb-block">
+        <div class="sb-label">Key Concept</div>
+        <p class="sb-body"><strong>Filter bubble</strong> — personalised algorithms narrow the range of information users encounter and reinforce existing beliefs (Nguyen et al., 2014).</p>
+      </div>
+      <div class="sb-block">
+        <div class="sb-label">Key Finding</div>
+        <p class="sb-body"><strong>Cognitive passivity</strong> — Sundar (2020) argues that frictionless algorithmic design gradually weakens the critical thinking habits users need to evaluate information independently.</p>
+      </div>
+      <div class="sb-block">
+        <div class="sb-label">Discussion Question</div>
+        <p class="sb-body" style="font-style:italic;">"Do we genuinely choose what we consume, or are our choices shaped by algorithms before we even notice?"</p>
+      </div>
+      <div class="sb-block">
+        <div class="sb-label">Sources</div>
+        <a class="sb-link" href="https://dl.acm.org/doi/10.1145/2566486.2568012" target="_blank">↗ Nguyen et al. (2014)</a>
+        <a class="sb-link" href="https://www.pnas.org/doi/10.1073/pnas.2023301118" target="_blank">↗ Cinelli et al. (2021)</a>
+        <a class="sb-link" href="https://academic.oup.com/jcmc/article/25/1/74/5700811" target="_blank">↗ Sundar (2020)</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ARTICLE 2 ── -->
+<div id="a3" class="page">
+  <div class="section-head rv">
+    <span class="sh-num">Article III — Privacy & Surveillance</span>
+    <span class="sh-title">The Watching Machine: How Surveillance Capitalism Redefines Privacy</span>
+    <span class="sh-author">Olzhas Tilektes</span>
+  </div>
+  <div class="article-grid rv">
+    <div class="article-body-col">
+      <h2 class="art-title">The Watching Machine: How Surveillance Capitalism Redefines Privacy</h2>
+      <p class="art-dek">Privacy is no longer just about keeping secrets. It is about resisting systems that transform ordinary behaviour into economic power — and those systems are already watching.</p>
+      <div class="art-body">
+        <p>The central issue in contemporary surveillance is not simply that more personal information is collected. The deeper shift is that behaviour is increasingly translated into data and then used to predict, influence, and govern future action. For HKUST(GZ) students living, studying, and socialising online, this shift is not abstract — it is happening in every app opened, every search made, every location shared. Understanding it is no longer optional.</p>
+        <p>As van Dijck (2015) argues, datafication becomes powerful when people begin treating quantified data as a trustworthy way of knowing social reality. Once this assumption becomes normal — once we accept that our behaviour can be measured, scored, and acted upon — continuous monitoring begins to look useful rather than intrusive. The fitness app tracking your steps, the university platform recording your login times, the social feed noting which posts you linger on: each feels like a personalised service. Together, they constitute a comprehensive portrait of your inner life assembled without your full awareness.</p>
+        <div class="pullquote">
+          <p class="pq-text">"Surveillance is not a side effect of digital platforms. It is built into their economic logic."</p>
+          <span class="pq-cite">— Zuboff, 2016, adapted</span>
+        </div>
+        <p>Zuboff (2016) reveals why data collection expands so aggressively. Behavioural data is valuable not merely because it describes users, but because it can be used to predict and modify their behaviour for profit. This is the logic of surveillance capitalism: human experience is the raw material from which behavioural predictions are manufactured and sold. Privacy is at stake not only as protection from exposure, but as resistance to a concentration of power in systems that learn from people while remaining largely invisible to them. You are not the customer of these platforms. You are the product — and the factory.</p>
+        <p>What makes this especially concerning is how surveillance extends beyond the commercial sphere. Brayne (2018) demonstrates what data-driven surveillance looks like in policing. Big-data systems shift the logic from reaction to prediction: risk scores supplement human judgment, automated alerts widen monitoring, and databases begin to include individuals with no direct police contact. Most critically, data from other institutions — hospitals, schools, social services — can be merged into law enforcement systems, extending surveillance invisibly across ordinary social life. The person flagged as a risk may never have done anything. They simply fit a pattern.</p>
+        <p>Taken together, these perspectives reveal a common thread: pre-emptive power. Once institutions — whether corporations or governments — act on predicted behaviour rather than proven action, privacy becomes inseparable from questions of inequality, legitimacy, and democratic control. Those who generate the most data are not always those with the most power to contest how it is used. Students, in particular, leave dense digital trails across academic, social, and commercial platforms simultaneously, often with little understanding of how that data is aggregated, interpreted, or sold.</p>
+        <p>The question is not whether this surveillance can be switched off — it largely cannot, not without withdrawing from digital life entirely. The practical question is whether it can be made legible, contested, and regulated. Can surveillance ever be neutral if the systems collecting data also shape how people are classified and treated? And at what point does efficient monitoring become illegitimate pre-emptive control? These are not technical questions. They are political ones, and HKUST(GZ) students are among the citizens best placed to demand answers.</p>
+      </div>
+    </div>
+    <div class="article-side-rule"></div>
+    <div class="article-sidebar">
+      <div class="sb-block">
+        <div class="sb-label">Key Concept</div>
+        <p class="sb-body"><strong>Surveillance capitalism</strong> — Zuboff's (2016) term for the economic logic by which behavioural data is extracted, processed into predictions, and sold to those seeking to influence future action.</p>
+      </div>
+      <div class="sb-block">
+        <div class="sb-label">Key Argument</div>
+        <p class="sb-body"><strong>Pre-emptive power</strong> — Brayne (2018) shows that policing systems now act on predicted risk rather than proven action, expanding surveillance to people with no police contact at all.</p>
+      </div>
+      <div class="sb-block">
+        <div class="sb-label">Discussion Question</div>
+        <p class="sb-body" style="font-style:italic;">"Can surveillance ever be neutral if the systems that collect data also shape how people are classified and treated?"</p>
+      </div>
+      <div class="sb-block">
+        <div class="sb-label">Sources</div>
+        <a class="sb-link" href="#refs" target="_blank">↗ van Dijck (2015)</a>
+        <a class="sb-link" href="#refs" target="_blank">↗ Zuboff (2016)</a>
+        <a class="sb-link" href="#refs" target="_blank">↗ Brayne (2018)</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<section class="quiz-section" id="quiz">
+  <div class="page">
+    <div class="quiz-inner rv">
+      <div class="q-eyebrow">Knowledge Check · Six Questions</div>
+      <h2 class="q-headline">Test your understanding across all three articles</h2>
+      <div class="q-prog" id="qprog"></div>
+      <div id="qarea">
+        <div class="q-question" id="qq"></div>
+        <div class="q-opts" id="qopts"></div>
+        <div class="q-fb" id="qfb"></div>
+        <button class="q-next" id="qnext" onclick="nextQ()">Continue →</button>
+      </div>
+      <div class="q-score" id="qscore">
+        <span class="qs-n" id="qsn"></span>
+        <div class="qs-l" id="qsl"></div>
+        <p class="qs-m" id="qsm"></p>
+        <button class="qs-r" onclick="initQ()">Retake</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LINKS -->
+<div id="links" class="links-section page rv">
+  <div style="font-family:'DM Mono',monospace;font-size:0.63rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem;">Further Reading & Resources</div>
+  <div class="links-grid">
+    <a class="link-card" href="https://www.humanetech.com/" target="_blank">
+      <div class="lc-type">Organisation</div>
+      <div class="lc-title">Center for Humane Technology</div>
+      <div class="lc-desc">Ex-Google ethicists examining how platform design affects psychology and society.</div>
+    </a>
+    <a class="link-card" href="https://www.apa.org/topics/social-media-mental-health" target="_blank">
+      <div class="lc-type">Research</div>
+      <div class="lc-title">APA — Social Media & Mental Health</div>
+      <div class="lc-desc">American Psychological Association's overview of current empirical research on platform effects.</div>
+    </a>
+    <a class="link-card" href="https://makingcaringcommon.org/mcc-research/loneliness-in-america/" target="_blank">
+      <div class="lc-type">Report</div>
+      <div class="lc-title">Loneliness in America — Harvard</div>
+      <div class="lc-desc">Landmark 2021 study on the loneliness epidemic and its relationship to digital social life.</div>
+    </a>
+    <a class="link-card" href="https://greatergood.berkeley.edu/topic/social_connection" target="_blank">
+      <div class="lc-type">Science</div>
+      <div class="lc-title">Greater Good Science Center</div>
+      <div class="lc-desc">UC Berkeley research hub on human connection, belonging, and wellbeing.</div>
+    </a>
+  </div>
+</div>
+
+<!-- REFERENCES -->
+<section class="refs-section page rv" id="refs">
+  <h2 class="refs-title">References & Credits</h2>
+  <div class="refs-grid">
+    <div>
+      <div class="ref">Brayne, S. (2018). Big data surveillance: The case of policing. <em>American Sociological Review, 82</em>(5), 977–1008.</div>
+      <div class="ref">Cinelli, M., Morales, G. D. F., Galeazzi, A., Quattrociocchi, W., &amp; Starnini, M. (2021). The echo chamber effect on social media. <em>Proceedings of the National Academy of Sciences, 118</em>(9), e2023301118. <a href="https://doi.org/10.1073/pnas.2023301118" target="_blank">https://doi.org/10.1073/pnas.2023301118</a></div>
+      <div class="ref">Masur, P. K. (2019). <em>Situational privacy and self-disclosure: Communication processes in online environments.</em> Springer. <a href="https://doi.org/10.1007/978-3-319-78884-5" target="_blank">https://doi.org/10.1007/978-3-319-78884-5</a></div>
+      <div class="ref">Nguyen, T. T., Hui, P.-M., Harper, F. M., Terveen, L., &amp; Konstan, J. A. (2014). Exploring the filter bubble: The effect of using recommender systems on content diversity. In <em>Proceedings of the 23rd International WWW Conference</em> (pp. 677–686). ACM. <a href="https://doi.org/10.1145/2566486.2568012" target="_blank">https://doi.org/10.1145/2566486.2568012</a></div>
+    </div>
+    <div>
+      <div class="ref">Pang, H. (2021). Identifying associations between mobile social media users' perceived values, attitude, satisfaction, and eWOM engagement. <em>Telematics and Informatics, 59,</em> 101561. <a href="https://doi.org/10.1016/j.tele.2020.101561" target="_blank">https://doi.org/10.1016/j.tele.2020.101561</a></div>
+      <div class="ref">Sundar, S. S. (2020). Rise of machine agency: A framework for studying the psychology of human–AI interaction. <em>Journal of Computer-Mediated Communication, 25</em>(1), 74–88. <a href="https://doi.org/10.1093/jcmc/zmz026" target="_blank">https://doi.org/10.1093/jcmc/zmz026</a></div>
+      <div class="ref">Twenge, J. M., Martin, G. N., &amp; Campbell, W. K. (2018). Decreases in psychological well-being among American adolescents after 2012 and links to screen time. <em>Emotion, 18</em>(6), 765–780. <a href="https://doi.org/10.1037/emo0000403" target="_blank">https://doi.org/10.1037/emo0000403</a></div>
+      <div class="ref">van Dijck, J. (2015). Datafication, dataism and dataveillance: Big Data between scientific paradigm and ideology. <em>Surveillance &amp; Society, 12</em>(2), 197–208.</div>
+      <div class="ref">Zuboff, S. (2016). Big other: Surveillance capitalism and the prospects of an information civilization. <em>Journal of Information Technology, 30</em>(1), 75–89. <a href="https://doi.org/10.1057/jit.2015.5" target="_blank">https://doi.org/10.1057/jit.2015.5</a></div>
+      <div class="ref-credits"><strong>Multimodal Credits.</strong> All diagrams are original works. Statistics drawn from cited sources and publicly available reports. Typefaces: Playfair Display, Libre Baskerville, DM Mono (Google Fonts, SIL Open Font Licence). No third-party images reproduced. Interactive elements are original JavaScript. Produced for educational purposes, Assignment 3, HKUST(GZ), 2025.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">HKUST GZ <span>Times</span></div>
+  <p>Issue 01 · 2025 · Digital Identity, Surveillance & Algorithmic Power</p>
+  <p>Student E-Magazine · Assignment 3 · HKUST Guangzhou</p>
+</footer>
+
+<script>
+const QS=[
+  {q:"According to Pang (2021), what primarily shapes social media users' online behaviour?",opts:["A desire for authentic self-expression","Hedonic and utilitarian values seeking external approval","Fear of missing out on events","Creative curiosity"],ans:1,fb:"Pang (2021) found that mobile social media users are driven by hedonic and utilitarian values — orienting behaviour toward external reward and approval rather than genuine self-expression."},
+  {q:"What does Masur (2019) argue happens to self-disclosure when communication moves online?",opts:["People share more authentically","Contextual cues collapse — content reaches an undifferentiated audience","Privacy concerns naturally disappear","Users develop stronger personal boundaries"],ans:1,fb:"Masur (2019) argues that online communication collapses contextual cues, meaning everything reaches the same broad audience simultaneously — making genuine vulnerability feel risky and reducing depth of sharing."},
+  {q:"According to Zuboff (2016), what is the core purpose of data collection on digital platforms?",opts:["To improve user experience genuinely","To predict and modify user behaviour for profit","To enforce government surveillance","To personalise advertising only"],ans:1,fb:"Zuboff (2016) argues that behavioural data is collected not just to describe users, but to predict and modify their future behaviour for commercial gain — this is the logic of surveillance capitalism."},
+  {q:"What does Brayne (2018) show about big-data policing systems?",opts:["They reduce surveillance to only confirmed suspects","They shift policing from reaction to prediction, including people with no police contact","They are fully transparent and auditable","They eliminate bias in law enforcement"],ans:1,fb:"Brayne (2018) shows that big-data policing shifts from reactive to predictive logic — risk scores supplement judgment, and surveillance expands to include people with no direct police contact, merging data across institutions."},
+  {q:"What is the 'filter bubble' effect identified by Nguyen et al. (2014)?",opts:["Algorithms that block offensive content","Personalised recommendations that narrow information diversity and reinforce existing beliefs","A tool that helps users find new topics","A social media privacy setting"],ans:1,fb:"Nguyen et al. (2014) showed that recommender systems prioritise familiarity over diversity, limiting the range of information users encounter and creating echo chambers that reinforce pre-existing beliefs."},
+  {q:"What does Sundar (2020) mean by 'acquired cognitive passivity'?",opts:["A state of relaxation from too much screen time","The gradual loss of the habit and ability to think critically, caused by reliance on algorithmic filtering","A new form of digital mindfulness","Passive aggressive behaviour online"],ans:1,fb:"Sundar (2020) argues that frictionless algorithmic design reduces cognitive effort to the point where users gradually lose both the habit and capacity for critical, independent information evaluation."}
+];
+let cur=0,score=0,answered=false;
+function initQ(){cur=0;score=0;answered=false;document.getElementById('qarea').style.display='block';document.getElementById('qscore').style.display='none';prog();renderQ();}
+function prog(){document.getElementById('qprog').innerHTML=QS.map((_,i)=>`<div class="q-pd ${i<cur?'done':i===cur?'active':''}"></div>`).join('');}
+function renderQ(){const q=QS[cur];document.getElementById('qq').textContent=q.q;document.getElementById('qopts').innerHTML=q.opts.map((o,i)=>`<button class="q-opt" onclick="ans(${i})"><span class="q-ltr">${'ABCD'[i]}</span>${o}</button>`).join('');document.getElementById('qfb').style.display='none';document.getElementById('qnext').style.display='none';answered=false;}
+function ans(i){if(answered)return;answered=true;const q=QS[cur];document.querySelectorAll('.q-opt')[q.ans].classList.add('correct');if(i!==q.ans)document.querySelectorAll('.q-opt')[i].classList.add('wrong');else score++;const f=document.getElementById('qfb');f.textContent=q.fb;f.style.display='block';document.getElementById('qnext').style.display='inline-block';}
+function nextQ(){cur++;if(cur<QS.length){prog();renderQ();}else{document.getElementById('qarea').style.display='none';const s=document.getElementById('qscore');s.style.display='block';document.getElementById('qsn').textContent=score+'/'+QS.length;const p=score/QS.length;document.getElementById('qsl').textContent=p===1?'Perfect score':p>=0.67?'Strong result':'Keep exploring';document.getElementById('qsm').textContent=p===1?'You have mastered the arguments across all three articles.':p>=0.67?'Solid understanding. Revisit the articles for the questions you missed.':'The answers are all in the three articles above — a second read will help.';}}
+initQ();
+const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:0.06});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>
