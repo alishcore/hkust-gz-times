@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Life - HKUST(GZ) Times</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/index_alt.css">
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true">
+    <div id="reading-progress-bar"></div>
+  </div>
+
+  <!-- Masthead -->
+  <header id="top">
+    <div class="masthead-inner">
+      <div class="magazine-titlebar" aria-label="Magazine title bar">
+        <div class="titlebar-left">
+          <div class="titlebar-item">
+            <a class="titlebar-trigger" href="#top">
+              <span class="titlebar-icon" aria-hidden="true">
+                <span class="menu-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </span>
+              <span>Home</span>
+            </a>
+            <div class="dropdown-menu">
+              <strong>Articles</strong>
+              <span>#technology</span>
+              <a class="dropdown-subitem" href="#introduction">Digital Life</a>
+            </div>
+          </div>
+          <div class="titlebar-item">
+            <a class="titlebar-trigger" href="#footer">
+              <span class="titlebar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M20 21a8 8 0 0 0-16 0"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </span>
+              <span>Authors</span>
+            </a>
+            <div class="dropdown-menu">
+              <strong>Authors</strong>
+              <a href="#article-1">Alisher - The Performance Trap</a>
+              <a href="#article-2">Yernur - The Illusion of Choice</a>
+              <a href="#article-3">Olzhas - The Watching Machine</a>
+            </div>
+          </div>
+        </div>
+        <div class="titlebar-item titlebar-center">
+          <a class="titlebar-name" href="#top">HKUST GZ <span>Times</span></a>
+          <div class="dropdown-menu">
+            <strong>About the HKUST GZ Times</strong>
+            <p>This article was created for an academic assignment only.</p>
+            <p>This is not an official webpage.</p>
+          </div>
+        </div>
+        <div class="titlebar-actions" aria-label="Magazine tools">
+          <button class="icon-button" type="button" aria-label="Views" title="Views">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span>1.2k</span>
+          </button>
+          <button class="icon-button" type="button" aria-label="Upvote" title="Upvote">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 19V5"></path>
+              <path d="M5 12l7-7 7 7"></path>
+            </svg>
+            <span>128</span>
+          </button>
+          <button class="icon-button" type="button" aria-label="Downvote" title="Downvote">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5v14"></path>
+              <path d="M19 12l-7 7-7-7"></path>
+            </svg>
+            <span>12</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- Cover -->
+    <figure class="article-hero-image cover-image">
+      <div class="article-hero-frame">
+        <img src="img/wp3156104.jpg" alt="Misty forested mountains">
+        <div class="hero-overlay">
+          <div class="theme-tag">#technology</div>
+          <h1 class="article-title">Digital Life</h1>
+          <p class="title-meta">
+            Written by the team Orion<br>
+            Last edited: May 5, 2026
+          </p>
+        </div>
+      </div>
+      <figcaption>Image citation: img/wp3156104.jpg</figcaption>
+    </figure>
+
+    <!-- Contents -->
+    <nav id="contents" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li>
+          <a href="#article-1">Article 1. The Performance Trap</a>
+          <ul>
+            <li><a href="#article-1-section-1">Performance and Approval</a></li>
+            <li><a href="#article-1-section-2">Self-Concept Confusion</a></li>
+            <li><a href="#article-1-section-3">Connection and Comparison</a></li>
+            <li><a href="#article-1-section-4">Resisting the Performance Trap</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#article-2">Article 2. The Illusion of Choice</a>
+          <ul>
+            <li><a href="#article-2-section-1">Algorithmic Choice</a></li>
+            <li><a href="#article-2-section-2">Filter Bubbles</a></li>
+            <li><a href="#article-2-section-3">Cognitive Passivity</a></li>
+            <li><a href="#article-2-section-4">Active Critical Thinking</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#article-3">Article 3. The Watching Machine</a>
+          <ul>
+            <li><a href="#article-3-section-1">Datafication</a></li>
+            <li><a href="#article-3-section-2">Surveillance Capitalism</a></li>
+            <li><a href="#article-3-section-3">Pre-emptive Power</a></li>
+            <li><a href="#article-3-section-4">Regulation and Legibility</a></li>
+          </ul>
+        </li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#further-reading">Further reading</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </nav>
+
+    <!-- Opening section -->
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>This HKUST(GZ) Times e-magazine is written by the team Orion for the HKUST(GZ) students. This article is especially relevant for students who intend to major in Artificial Intelligence (AI) or Data Science (DS). We discuss the topic of digital life from different angles in three articles. The goal of the article is to bring awareness to some problems related to our digital era.</p>
+    </section>
+
+    <!-- Articles -->
+    <article id="article-1">
+      <figure class="article-hero-image">
+        <div class="article-hero-frame">
+          <img src="img/through_the_branches.jpg" alt="View through tree branches">
+          <div class="hero-overlay">
+            <h2 class="article-hero-title">The Performance Trap: How Social Media Turns Identity Into a Brand</h2>
+            <p class="article-meta">By Alisher Zhangeldiyev</p>
+          </div>
+        </div>
+        <figcaption>Image citation: img/through_the_branches.jpg</figcaption>
+      </figure>
+
+      <aside class="side-note" style="--note-top: 12rem;">
+        <strong>Side note</strong>
+        Placeholder note for Article 1. Use this space for a short context point, definition, or image credit.
+      </aside>
+
+      <h3 id="article-1-section-1">Performance and Approval</h3>
+      <p>Scroll through any social media feed and you will notice something peculiar: everyone appears happy, successful, and aesthetically coordinated. The food is always plated beautifully. The holidays are always golden-lit. Yet research consistently shows that people feel <em>worse</em>, not better, after these scrolling sessions - more anxious, more inadequate, and strangely more alone. This is not an accident. It is the logical outcome of a system that rewards performance over presence, and understanding that logic is the first step toward resisting it.</p>
+
+      <p>The evolution of digital life has fundamentally altered how individuals construct and perceive their identities. According to Pang (2021), mobile social media users are increasingly driven by hedonic and utilitarian values - seeking pleasure and external reward - which shapes their online behaviour around approval rather than authentic self-expression. In this framework, the digital profile becomes a curated product engineered for external evaluation rather than a reflection of inner reality. We no longer simply live our lives and share them; we construct a version of ourselves optimised for likes, comments, and shares. The self becomes a brand, and brands must be managed constantly.</p>
+
+      <h3 id="article-1-section-2">Self-Concept Confusion</h3>
+      <p>This shift from "being" to "representing" is subtle but profound. When we frame our lives for an audience - even a hypothetical one - we begin to lose track of where the performance ends and the person begins. Psychologists call this <strong>self-concept confusion</strong>: the fracture between the public identity we maintain online and the private identity we actually inhabit. For HKUST(GZ) students, this tension is especially acute. Higher education is already a period of intense identity formation - students are testing values, forming professional aspirations, and navigating new social environments. Into this already uncertain landscape, constant digital self-presentation adds the additional burden of projecting a coherent and aspirational image to a permanent, undifferentiated audience.</p>
+
+      <h3 id="article-1-section-3">Connection and Comparison</h3>
+      <p>There is a clear tension, too, between the quantity and quality of digital social relations. Masur (2019) argues that the constant availability of online communication reshapes how individuals perceive privacy and self-disclosure across situational contexts. Online, the contextual cues that govern face-to-face sharing collapse: what we say reaches friends, acquaintances, and strangers simultaneously, making genuine vulnerability feel risky. The result is that people share less of what actually matters - the uncertain, complex, genuinely personal - and more of what performs well. Connection multiplies in quantity while shrinking in depth.</p>
+
+      <p>The psychological consequences are measurable. Twenge et al. (2018) identified a direct link between increased screen time and declining psychological well-being among American adolescents - lower self-esteem, reduced life satisfaction, and diminished happiness. The correlation was strongest on image-sharing platforms where social comparison is most direct. As you craft the "perfect" post, you implicitly measure yourself against others doing exactly the same, caught in a loop of mutual performance in which nobody wins.</p>
+
+      <h3 id="article-1-section-4">Resisting the Performance Trap</h3>
+      <p>Some scholars argue that the internet also creates genuine communities and provides social support that would otherwise be unavailable - and they are right. Marginalised groups, geographically isolated individuals, and those exploring identities their immediate environments do not accept can find real belonging online. But the problem lies in platform architectures that systematically reward performance over authenticity and make social validation the primary metric of self-worth.</p>
+
+      <p>The digital impact on social life is deeply paradoxical. Technology offers unprecedented opportunities for community building, yet it risks transforming human identity into a marketable object of algorithmic approval. To maintain healthy social relations and a stable sense of self, HKUST(GZ) students must navigate the line between using digital tools for genuine connection and losing their authentic selves to the demands of virtual performance. That navigation begins not with logging off, but with asking a harder question each time you reach for your phone: am I sharing who I am, or constructing who I want to appear to be?</p>
+      <blockquote>
+        <p>The digital profile has become a curated product designed for external evaluation rather than a reflection of reality.</p>
+        <cite>Alisher Zhangeldiyev</cite>
+      </blockquote>
+
+    </article>
+
+    <article id="article-2">
+      <figure class="article-hero-image">
+        <div class="article-hero-frame">
+          <img src="img/buildings-purple-ai-art.jpg" alt="Purple digital city buildings">
+          <div class="hero-overlay">
+            <h2 class="article-hero-title">The Illusion of Choice: How Algorithms Quietly Replace Our Thinking</h2>
+            <p class="article-meta">By Yernur Nurzhan</p>
+          </div>
+        </div>
+        <figcaption>Image citation: img/buildings-purple-ai-art.jpg</figcaption>
+      </figure>
+
+      <aside class="side-note side-note-left" style="--note-top: 11rem;">
+        <strong>Side note</strong>
+        Placeholder note for Article 2. Add a quick example or a small supporting detail here.
+      </aside>
+
+      <h3 id="article-2-section-1">Algorithmic Choice</h3>
+      <p>To what extent do algorithms reshape our thinking? The question sounds philosophical, but its implications are immediate and practical. Every time a streaming service recommends a show, a social feed surfaces a post, or a search engine orders its results, a decision is being made on your behalf - quietly, invisibly, and in the interests of engagement rather than your intellectual growth. Algorithmic systems create the illusion of choice by narrowing access to content, reinforcing existing beliefs, and encouraging passive consumption, significantly weakening critical thinking over time.</p>
+
+      <h3 id="article-2-section-2">Filter Bubbles</h3>
+      <p>Research on the "filter bubble" shows that personalised recommendation systems are gradually limiting the variety of information users encounter. Instead of expanding knowledge, algorithms prioritise familiarity - the content most likely to keep you scrolling - resulting in echo chambers that reinforce pre-existing beliefs (Nguyen et al., 2014). Rather than encountering perspectives that challenge assumptions, users are fed a selective version of reality that feels comprehensive but is actually curated. The algorithm does not show you the world. It shows you a reflection of what it has already learned you prefer.</p>
+
+      <p>A study published in the <em>Proceedings of the National Academy of Sciences</em> demonstrates that online environments reinforce confirmation bias: users are constantly confronted with content consistent with their existing beliefs (Cinelli et al., 2021). For HKUST(GZ) students whose critical thinking skills are still developing, repeated exposure to algorithmically curated agreement can quietly erode the habit of seeking out contradiction and complexity that academic inquiry demands.</p>
+
+      <h3 id="article-2-section-3">Cognitive Passivity</h3>
+      <p>Algorithmic environments also contribute to cognitive overload when users rely on automated systems to filter and prioritise information. Frictionless design reduces effort - which feels like a benefit - but it also weakens the habits necessary for critical thinking (Sundar, 2020). When the algorithm decides what is worth reading, the cognitive muscles required to make those judgments yourself begin to atrophy. Over time, this can contribute to what researchers call <strong>acquired cognitive passivity</strong>: people gradually lose both the habit and the ability to engage with complex, challenging, or unfamiliar ideas.</p>
+
+      <h3 id="article-2-section-4">Active Critical Thinking</h3>
+      <p>It is important to be precise about what is not being claimed here. Algorithms do not eliminate free will, and personalisation does offer genuine convenience. The problem is subtler: algorithms make passive consumption the path of least resistance, and passive consumption is the enemy of the kind of active, critical, self-directed engagement that higher education is supposed to cultivate.</p>
+
+      <p>The practical implication for students is straightforward: the information environment you inhabit is not neutral. It has been engineered, and it is being engineered on you. Deliberately seeking out sources outside your recommendation feed, practising friction in information consumption, and asking not just "is this engaging?" but "is this challenging me?" is not a digital detox strategy. It is an intellectual survival skill for the twenty-first century - and one every HKUST(GZ) student can begin practising today.</p>
+
+      <blockquote>
+        <p>Algorithms trick us into thinking we see the whole picture, but in reality we are seeing only a selective version of reality.</p>
+        <cite>Yernur Nurzhan</cite>
+      </blockquote>
+
+    </article>
+
+    <article id="article-3">
+      <figure class="article-hero-image">
+        <div class="article-hero-frame">
+          <img src="img/raiden_rain.jpg" alt="Rainy night digital scene">
+          <div class="hero-overlay">
+            <h2 class="article-hero-title">The Watching Machine: How Surveillance Capitalism Redefines Privacy</h2>
+            <p class="article-meta">By Olzhas Tilektes</p>
+          </div>
+        </div>
+        <figcaption>Image citation: img/raiden_rain.jpg</figcaption>
+      </figure>
+
+      <aside class="side-note" style="--note-top: 11rem;">
+        <strong>Side note</strong>
+        Placeholder note for Article 3. Use this note for a privacy term, statistic, or source reminder.
+      </aside>
+
+      <h3 id="article-3-section-1">Datafication</h3>
+      <p>The central issue in contemporary surveillance is not simply that more personal information is collected. The deeper shift is that behaviour is increasingly translated into data and then used to predict, influence, and govern future action. For HKUST(GZ) students living, studying, and socialising online, this shift is not abstract - it is happening in every app opened, every search made, every location shared. Understanding it is no longer optional.</p>
+
+      <p>As van Dijck (2015) argues, datafication becomes powerful when people begin treating quantified data as a trustworthy way of knowing social reality. Once this assumption becomes normal - once we accept that our behaviour can be measured, scored, and acted upon - continuous monitoring begins to look useful rather than intrusive. The fitness app tracking your steps, the university platform recording your login times, the social feed noting which posts you linger on: each feels like a personalised service. Together, they constitute a comprehensive portrait of your inner life assembled without your full awareness.</p>
+
+      <h3 id="article-3-section-2">Surveillance Capitalism</h3>
+      <p>Zuboff (2016) reveals why data collection expands so aggressively. Behavioural data is valuable not merely because it describes users, but because it can be used to predict and modify their behaviour for profit. This is the logic of surveillance capitalism: human experience is the raw material from which behavioural predictions are manufactured and sold. Privacy is at stake not only as protection from exposure, but as resistance to a concentration of power in systems that learn from people while remaining largely invisible to them. You are not the customer of these platforms. You are the product - and the factory.</p>
+
+      <h3 id="article-3-section-3">Pre-emptive Power</h3>
+      <p>What makes this especially concerning is how surveillance extends beyond the commercial sphere. Brayne (2018) demonstrates what data-driven surveillance looks like in policing. Big-data systems shift the logic from reaction to prediction: risk scores supplement human judgment, automated alerts widen monitoring, and databases begin to include individuals with no direct police contact. Most critically, data from other institutions - hospitals, schools, social services - can be merged into law enforcement systems, extending surveillance invisibly across ordinary social life. The person flagged as a risk may never have done anything. They simply fit a pattern.</p>
+
+      <p>Taken together, these perspectives reveal a common thread: pre-emptive power. Once institutions - whether corporations or governments - act on predicted behaviour rather than proven action, privacy becomes inseparable from questions of inequality, legitimacy, and democratic control. Those who generate the most data are not always those with the most power to contest how it is used. Students, in particular, leave dense digital trails across academic, social, and commercial platforms simultaneously, often with little understanding of how that data is aggregated, interpreted, or sold.</p>
+
+      <h3 id="article-3-section-4">Regulation and Legibility</h3>
+      <p>The question is not whether this surveillance can be switched off - it largely cannot, not without withdrawing from digital life entirely. The practical question is whether it can be made legible, contested, and regulated. Can surveillance ever be neutral if the systems collecting data also shape how people are classified and treated? And at what point does efficient monitoring become illegitimate pre-emptive control? These are not technical questions. They are political ones, and HKUST(GZ) students are among the citizens best placed to demand answers.</p>
+
+      <blockquote>
+        <p>Surveillance is not a side effect of digital platforms. It is built into their economic logic.</p>
+        <cite>Olzhas Tilektes</cite>
+      </blockquote>
+    </article>
+
+    <section id="conclusion">
+      <h2>Conclusion</h2>
+      <p>Taken together, these three articles argue that HKUST(GZ) students face a common challenge: digital systems designed not to serve human flourishing, but to extract value from human behaviour. Identity is mined for social validation. Behaviour is mined for predictive data. Attention is mined for engagement metrics. The antidote in each case is the same - awareness, intention, and the refusal to mistake convenience for freedom.</p>
+      <p>This is the part where we write the closing and the conclusion.</p>
+    </section>
+
+    <section id="quiz">
+      <h2>Quiz</h2>
+      <p id="quiz-progress"></p>
+      <h3 id="quiz-question"></h3>
+      <ol id="quiz-options"></ol>
+      <p id="quiz-feedback" hidden></p>
+      <button id="quiz-next" type="button" hidden>Continue</button>
+      <div id="quiz-result" hidden>
+        <h3>Result</h3>
+        <p id="quiz-score"></p>
+        <p id="quiz-message"></p>
+        <button id="quiz-restart" type="button">Retake quiz</button>
+      </div>
+    </section>
+
+    <section id="further-reading">
+      <h2>Further reading</h2>
+      <p>Some articles</p>
+    </section>
+
+    <section id="references">
+      <h2>References</h2>
+
+      <p>Brayne, S. (2018). Big data surveillance: The case of policing. <em>American Sociological Review, 82</em>(5), 977-1008.</p>
+
+      <p>Cinelli, M., Morales, G. D. F., Galeazzi, A., Quattrociocchi, W., &amp; Starnini, M. (2021). The echo chamber effect on social media. <em>Proceedings of the National Academy of Sciences, 118</em>(9), e2023301118. https://doi.org/10.1073/pnas.2023301118</p>
+
+      <p>Masur, P. K. (2019). <em>Situational privacy and self-disclosure: Communication processes in online environments.</em> Springer. https://doi.org/10.1007/978-3-319-78884-5</p>
+
+      <p>Nguyen, T. T., Hui, P.-M., Harper, F. M., Terveen, L., &amp; Konstan, J. A. (2014). Exploring the filter bubble: The effect of using recommender systems on content diversity. In <em>Proceedings of the 23rd International WWW Conference</em> (pp. 677-686). ACM. https://doi.org/10.1145/2566486.2568012</p>
+
+      <p>Pang, H. (2021). Identifying associations between mobile social media users' perceived values, attitude, satisfaction, and eWOM engagement. <em>Telematics and Informatics, 59</em>, 101561. https://doi.org/10.1016/j.tele.2020.101561</p>
+
+      <p>Sundar, S. S. (2020). Rise of machine agency: A framework for studying the psychology of human-AI interaction. <em>Journal of Computer-Mediated Communication, 25</em>(1), 74-88. https://doi.org/10.1093/jcmc/zmz026</p>
+
+      <p>Twenge, J. M., Martin, G. N., &amp; Campbell, W. K. (2018). Decreases in psychological well-being among American adolescents after 2012 and links to screen time. <em>Emotion, 18</em>(6), 765-780. https://doi.org/10.1037/emo0000403</p>
+
+      <p>van Dijck, J. (2015). Datafication, dataism and dataveillance: Big Data between scientific paradigm and ideology. <em>Surveillance &amp; Society, 12</em>(2), 197-208.</p>
+
+      <p>Zuboff, S. (2016). Big other: Surveillance capitalism and the prospects of an information civilization. <em>Journal of Information Technology, 30</em>(1), 75-89. https://doi.org/10.1057/jit.2015.5</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">HKUST(GZ) Times</p>
+      <p class="footer-made">Made in TSEH, with love.</p>
+      <p class="footer-note">This webpage was created for an academic assignment only. It is not an official HKUST(GZ) publication.</p>
+    </div>
+  </footer>
+  <script src="scripts/index_alt.js"></script>
+</body>
+</html>
